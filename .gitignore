@@ -1,4 +1,4 @@
 *.pyc
 *~
-backbonetest/static
+backbonetest/static-tmp
 .idea
