@@ -1,5 +1,6 @@
 from tastypie import fields
 from tastypie.authorization import Authorization
+from tastypie.constants import ALL_WITH_RELATIONS
 from tastypie.resources import ModelResource
 from cities.models import State, City
 
@@ -9,14 +10,18 @@ class StateResource(ModelResource):
         resource_name = 'state'
         authorization = Authorization()
         always_return_data = True
-        #excludes = ['source_state_id']
 
 class CityResource(ModelResource):
     state = fields.ForeignKey(StateResource, "state")
+
+    def dehydrate_state(self, bundle):
+        return bundle.obj.state.id
 
     class Meta:
         queryset = City.objects.all()
         resource_name = 'city'
         authorization = Authorization()
         always_return_data = True
-        #excludes = ['source_place_id']
+        filtering = {
+            "state": ALL_WITH_RELATIONS,
+        }

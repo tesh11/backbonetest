@@ -13,6 +13,17 @@ header {
     top: 70px;
     bottom: 20px;
     width: 260px;
+}
+
+#cities {
+    position: absolute;
+    left: 640px;
+    top: 70px;
+    bottom: 20px;
+    width: 260px;
+}
+
+.list {
     border: solid 1px #cccccc;
     overflow-y: scroll;
 }
@@ -22,7 +33,7 @@ header {
     top: 70px;
     bottom: 20px;
     left: 300px;
-    right: 20px;;
+    width: 310px;
 }
 
 .state-details-form {
@@ -48,6 +59,10 @@ li a {
     color: #000000;
     border-bottom: solid 1px #CCCCCC;
     padding: 8px;
+}
+
+#cities>ul>li>a {
+    font-size: 14px;
 }
 
 li a:hover {

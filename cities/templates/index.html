@@ -11,11 +11,15 @@
     </header>
 
     <section>
-        <div id="states"></div>
+        <div id="states" class="list"></div>
     </section>
 
     <section>
         <div id="state-detail">No state selected</div>
+    </section>
+
+    <section>
+        <div id="cities" class="list"></div>
     </section>
 
     <!-- Templates -->
@@ -41,6 +45,9 @@
         </div>
     </script>
 
+    <script type="text/template" id="tpl-city-list-item">
+        <a href="#states/<%= state %>/cities/<%= id %>"><%= name %></a>
+    </script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/underscore.js"></script>
