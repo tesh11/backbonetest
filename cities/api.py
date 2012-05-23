@@ -8,6 +8,7 @@ class StateResource(ModelResource):
         queryset = State.objects.all()
         resource_name = 'state'
         authorization = Authorization()
+        always_return_data = True
         #excludes = ['source_state_id']
 
 class CityResource(ModelResource):
@@ -17,4 +18,5 @@ class CityResource(ModelResource):
         queryset = City.objects.all()
         resource_name = 'city'
         authorization = Authorization()
+        always_return_data = True
         #excludes = ['source_place_id']

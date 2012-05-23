@@ -2,13 +2,28 @@
 <html lang="en">
 <head>
     <title>Backbone + Tastypie test</title>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/cities.css" />
 </head>
 <body>
-    <div id="states"></div>
+    <header>
+        <h1>Backbone + Tastypie test</h1>
+    </header>
 
-    <div id="state-detail">No state selected</div>
+    <section>
+        <div id="states"></div>
+    </section>
+
+    <section>
+        <div id="state-detail">No state selected</div>
+    </section>
 
     <!-- Templates -->
+    <script type="text/template" id="tpl-header">
+        <h1 id="title">Backbone + Tastypie test</h1>
+        <button class="new">New State</button>
+    </script>
+
     <script type="text/template" id="tpl-state-list-item">
         <a href="#states/<%= id %>"><%= abbreviation %></a>
     </script>
@@ -21,6 +36,8 @@
             <input type="text" id="abbreviation" name="abbreviation" value="<%= abbreviation %>" required />
             <label for="source-state-id">Source State Id:</label>
             <input type="text" id="source-state-id" name="source_state_id" value="<%= source_state_id %>" required />
+            <button class="save">Save</button>
+            <button class="delete">Delete</button>
         </div>
     </script>
 
