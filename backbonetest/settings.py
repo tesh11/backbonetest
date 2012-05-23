@@ -4,6 +4,8 @@ import os
 from os.path import abspath, dirname, join
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+USE_TASTYPIE = True
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -123,6 +125,15 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates/'),
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                               "django.core.context_processors.debug",
+                               "django.core.context_processors.i18n",
+                               "django.core.context_processors.media",
+                               "django.core.context_processors.static",
+                               "django.core.context_processors.tz",
+                               "django.contrib.messages.context_processors.messages",
+                               "cities.context_processors.use_tastypie")
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,11 +145,15 @@ INSTALLED_APPS = (
     'gunicorn',
     'storages',
     'cities',
-    'tastypie',
     'backbone_tastypie',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+if USE_TASTYPIE:
+    INSTALLED_APPS = INSTALLED_APPS + ('tastypie',)
+else:
+    INSTALLED_APPS = INSTALLED_APPS + ('djangorestframework', )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

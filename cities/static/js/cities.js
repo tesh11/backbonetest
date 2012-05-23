@@ -31,7 +31,11 @@ window.City = Backbone.Model.extend({
 window.CityCollection = Backbone.Collection.extend({
     model: City,
     url: function() {
-        return '/api/v1/city/?state=' + this.state + '&limit=' + this.pageSize + '&offset=' + (this.page * this.pageSize);
+        if (useTastypie) {
+            return '/api/v1/city/?state=' + this.state + '&limit=' + this.pageSize + '&offset=' + (this.page * this.pageSize);
+        } else {
+            return '/api/v1/city/state/' + this.state + '/?limit=' + this.pageSize + '&page=' + (this.page + 1);
+        }
     },
     comparator: function(city) {
         return city.get('name');

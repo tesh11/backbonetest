@@ -4,6 +4,10 @@
     <title>Backbone + Tastypie test</title>
 
     <link rel="stylesheet" href="{{ STATIC_URL }}css/cities.css" />
+
+    <script type="text/javascript">
+        useTastypie = {{ USE_TASTYPIE|lower }};
+    </script>
 </head>
 <body>
     <header>
@@ -52,7 +56,11 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/underscore.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}js/backbone.js"></script>
+    {% if USE_TASTYPIE %}
     <script type="text/javascript" src="{{ STATIC_URL }}js/backbone-tastypie.js"></script>
+    {% else %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/backbone-drf.js"></script>
+    {% endif %}
     <script type="text/javascript" src="{{ STATIC_URL }}js/cities.js"></script>
 </body>
 </html>
