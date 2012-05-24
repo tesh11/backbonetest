@@ -3,9 +3,9 @@ backbone.js with django-tastypie and django-rest-framework
 
 Just a simple prototype to learn backbone.js and try out django-tastypie and django-rest-framework.
 
-backbone.js - [http://documentcloud.github.com/backbone/#](http://documentcloud.github.com/backbone/#)
-django-tastypie - [http://tastypieapi.org/](http://tastypieapi.org/)
-django-rest-framework - [http://django-rest-framework.org/](http://django-rest-framework.org/)
+- backbone.js - [http://documentcloud.github.com/backbone/#](http://documentcloud.github.com/backbone/#)
+- django-tastypie - [http://tastypieapi.org/](http://tastypieapi.org/)
+- django-rest-framework - [http://django-rest-framework.org/](http://django-rest-framework.org/)
 
 Setup
 -----
