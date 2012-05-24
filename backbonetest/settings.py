@@ -65,8 +65,6 @@ MEDIA_URL = ''
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
 
-AWS_ACCESS_KEY_ID = 'AKIAIL26IME6YFTAOJCA'
-AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'backbonetest'
 
 # Absolute path to the directory static files should be collected to.
