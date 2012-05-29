@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # Used for serving static content via gunicorn (not for production)
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
+    (r'^ko/$', IndexView.as_view(template_name='ko.html')),
     (r'^$', IndexView.as_view()),
 )
 

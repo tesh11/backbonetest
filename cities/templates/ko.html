@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Knockout + Tastypie test</title>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/cities.css" />
+
+    <script type="text/javascript">
+        useTastypie = {{ USE_TASTYPIE|lower }};
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Knockout + Tastypie test</h1>
+        <button class="new" data-bind="click: newState">New State</button>
+    </header>
+
+    <section>
+        <div id="states" class="list">
+            <ul data-bind="foreach: states">
+                <li><a href="#" data-bind="click: $parent.loadState, text: abbreviation"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TODO: figure out form validation -->
+    <section>
+        <div id="state-detail">
+            <span style="display: none;" data-bind="visible: selectedState() === null">No state selected</span>
+            <div class="state-details-form" data-bind="with: selectedState()">
+                <label for="state-id">Id:</label>
+                <input type="text" id="state-id" name="id" data-bind="value: id, disable: true" />
+                <label for="abbreviation">Abbreviation:</label>
+                <input type="text" id="abbreviation" name="abbreviation" data-bind="value: abbreviation" />
+                <label for="source-state-id">Source State Id:</label>
+                <input type="text" id="source-state-id" name="source_state_id" data-bind="value: source_state_id" />
+                <button class="save" data-bind="click: $parent.saveState">Save</button>
+                <button class="delete" data-bind="click: $parent.deleteState">Delete</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="cities" class="list" data-bind="event: { scroll: checkScroll }">
+            <ul data-bind="foreach: cities">
+                <li><a href="#" data-bind="text: name"></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/knockout-2.1.0.debug.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/sammy-latest.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/cities-ko.js"></script>
+</body>
+</html>
