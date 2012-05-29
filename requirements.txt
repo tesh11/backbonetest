@@ -1,4 +1,4 @@
--e https://tesh11@github.com/tesh11/backbone-tastypie.git@cc57de49f8281354fcd9fd55402c51bd4eb2277e#egg=Backbone_tastypie-dev
+-e git+https://tesh11@github.com/tesh11/backbone-tastypie.git@cc57de49f8281354fcd9fd55402c51bd4eb2277e#egg=Backbone_tastypie-dev
 Django==1.4
 South==0.7.5
 URLObject==2.0.1
