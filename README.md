@@ -1,9 +1,10 @@
-backbone.js with django-tastypie and django-rest-framework
-==========================================================
+backbone.js/knockout.js with django-tastypie and django-rest-framework
+======================================================================
 
-Just a simple prototype to learn backbone.js and try out django-tastypie and django-rest-framework.
+Just a simple prototype to learn backbone.js & knockout.js and try out django-tastypie and django-rest-framework.
 
 - backbone.js - [http://documentcloud.github.com/backbone/#](http://documentcloud.github.com/backbone/#)
+- knockout.js - [http://knockoutjs.com/](http://knockoutjs.com/)
 - django-tastypie - [http://tastypieapi.org/](http://tastypieapi.org/)
 - django-rest-framework - [http://django-rest-framework.org/](http://django-rest-framework.org/)
 
@@ -53,3 +54,8 @@ from `settings.py` into `local_settings.py` and replace the DB information with 
 8. Run the app
 
         $ python manage.py runserver
+
+9. Test the UI
+
+    - backbone.js - [http://localhost:8000/](http://localhost:8000)
+    - knockout.js - [http://localhost:8000/ko/](http://localhost:8000/ko/)
